@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "222454878827",
+    "project_id": "calculadoraimc-be650",
+    "storage_bucket": "calculadoraimc-be650.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222454878827:android:23b80278f6b713e965172e",
+        "android_client_info": {
+          "package_name": "com.youapps.calculadora_imc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222454878827-7jnrvlja3fjt9h40v4as6gt5rtt5jds5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAww-yMIwnfI0GHITkGjC52hJT7vZajp2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222454878827-7jnrvlja3fjt9h40v4as6gt5rtt5jds5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
