@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -19,13 +20,35 @@ class LoginScreen extends StatelessWidget {
           ),
           child: Stack(
             children: [
-              const Text('Seja bem vindo'),
-              const SizedBox(height: 25),
               Positioned(
-                top: 250,
-                left: 10,
-                child: SvgPicture.asset('assets/images/fundo_splash.svg',
-                    width: 300),
+                top: 215,
+                left: 30,
+                child: Text(
+                  'YouHealthy',
+                  style: GoogleFonts.pacifico(
+                    color: Colors.white,
+                    fontSize: 35,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 285,
+                left: 30,
+                child: Text(
+                  'Calculadora de índice\n de massa corporal',
+                  style: GoogleFonts.pacifico(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 380,
+                left: 20,
+                child: SvgPicture.asset(
+                  'assets/images/imagem_splash.svg',
+                  width: 300,
+                ),
               ),
             ],
           ),

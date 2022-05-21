@@ -13,8 +13,6 @@ void main() async {
 }
 
 Map<String, String> mapa = {'teste chave': 'teste valor'};
-Color corPrimaria = const Color.fromARGB(255, 129, 185, 125);
-Color corSecundaria = const Color.fromARGB(255, 69, 120, 66);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -25,11 +23,10 @@ class MyApp extends StatelessWidget {
       title: 'Calculadora IMC',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color.fromARGB(255, 129, 185, 125),
+        primaryColor: const Color.fromARGB(255, 53, 75, 52),
         scaffoldBackgroundColor: const Color.fromRGBO(69, 120, 66, 1),
-        ),
+      ),
       home: const LoginScreen(),
-
     );
   }
 }
