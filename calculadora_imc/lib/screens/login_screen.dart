@@ -1,3 +1,4 @@
+import 'package:calculadora_imc/components/small_button_splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,7 +27,7 @@ class LoginScreen extends StatelessWidget {
                 child: Text(
                   'YouHealthy',
                   style: GoogleFonts.pacifico(
-                    color: Colors.white,
+                    color: corSecundaria,
                     fontSize: 35,
                   ),
                 ),
@@ -49,6 +50,11 @@ class LoginScreen extends StatelessWidget {
                   'assets/images/imagem_splash.svg',
                   width: 300,
                 ),
+              ),
+              const Positioned(
+                top: 825,
+                left: 310,
+                child: SmallBtn(),
               ),
             ],
           ),
