@@ -34,10 +34,10 @@ class SplashScreen extends StatelessWidget {
               ),
               Positioned(
                 top: 285,
-                left: 30,
+                left: 40,
                 child: Text(
                   'Calculadora de índice\n de massa corporal',
-                  style: GoogleFonts.pacifico(
+                  style: GoogleFonts.titilliumWeb(
                     color: Colors.white,
                     fontSize: 20,
                   ),

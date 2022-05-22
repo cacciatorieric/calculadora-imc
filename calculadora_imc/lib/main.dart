@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color.fromARGB(255, 53, 75, 52),
         scaffoldBackgroundColor: const Color.fromRGBO(69, 120, 66, 1),
       ),
-      home: const LoginScreen(),
+      home: const SplashScreen(),
     );
   }
 }

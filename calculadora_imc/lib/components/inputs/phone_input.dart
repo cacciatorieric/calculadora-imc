@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PhoneInput extends StatelessWidget {
   const PhoneInput({
@@ -36,17 +37,20 @@ class PhoneInput extends StatelessWidget {
           counterStyle: const TextStyle(height: 0),
           counterText: '',
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(6),
+            borderRadius: BorderRadius.circular(10),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(6),
+            borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(
               color: corSecundaria,
             ),
           ),
           hintText: hint,
+          hintStyle: GoogleFonts.titilliumWeb(
+            color: Colors.black45,
+          ),
           prefix: Padding(
-            padding: const EdgeInsets.all(4),
+            padding: const EdgeInsets.only(right: 12, bottom: 0, top: 23),
             child: bandeira,
           ),
         ),

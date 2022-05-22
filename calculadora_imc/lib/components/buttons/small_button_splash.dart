@@ -1,3 +1,4 @@
+import 'package:calculadora_imc/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SmallBtn extends StatelessWidget {
@@ -10,7 +11,14 @@ class SmallBtn extends StatelessWidget {
         '→',
         style: TextStyle(fontSize: 25),
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LoginScreen(),
+          ),
+        );
+      },
       style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
