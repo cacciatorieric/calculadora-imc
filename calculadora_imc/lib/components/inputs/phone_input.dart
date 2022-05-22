@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class PhoneInput extends StatelessWidget {
   const PhoneInput({
     Key? key,
     required this.controller,
     required this.hint,
-    this.texto,
+    this.bandeira,
     this.maxLenght,
     this.tipoInput,
   }) : super(key: key);
 
   final TextEditingController? controller;
   final String? hint;
-  final String? texto;
+  final SvgPicture? bandeira;
   final int? maxLenght;
   final TextInputType? tipoInput;
 
   @override
   Widget build(BuildContext context) {
+    Color corPrimaria = Theme.of(context).primaryColor;
+    Color corSecundaria = Theme.of(context).scaffoldBackgroundColor;
     return Container(
-      width: 150,
+      width: MediaQuery.of(context).size.width * 0.7,
+      height: 58,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(
             Radius.elliptical(12, 12),
@@ -29,12 +33,24 @@ class PhoneInput extends StatelessWidget {
         controller: controller,
         keyboardType: tipoInput,
         decoration: InputDecoration(
+          counterStyle: const TextStyle(height: 0),
+          counterText: '',
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(6),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(6),
+            borderSide: BorderSide(
+              color: corSecundaria,
+            ),
+          ),
           hintText: hint,
           prefix: Padding(
             padding: const EdgeInsets.all(4),
-            child: Text(texto!),
+            child: bandeira,
           ),
         ),
+        maxLength: maxLenght,
       ),
     );
   }

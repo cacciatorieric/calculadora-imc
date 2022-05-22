@@ -1,10 +1,10 @@
-import 'package:calculadora_imc/components/buttons/small_button_splash.dart';
 import 'package:calculadora_imc/components/buttons/standart_button.dart';
 import 'package:calculadora_imc/components/inputs/phone_input.dart';
 import 'package:calculadora_imc/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -36,8 +36,15 @@ class _LoginScreenState extends State<LoginScreen> {
               controller: phoneController,
               hint: 'Insira o número aqui',
               maxLenght: 11,
-              texto: '+55',
+              bandeira: SvgPicture.asset(
+                'assets/images/bandeirola.svg',
+                height: 25,
+                width: 25,
+              ),
               tipoInput: TextInputType.phone,
+            ),
+            const SizedBox(
+              height: 30,
             ),
             Visibility(
               child: TextField(
