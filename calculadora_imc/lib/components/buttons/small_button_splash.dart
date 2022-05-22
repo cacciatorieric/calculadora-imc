@@ -9,7 +9,6 @@ class SmallBtn extends StatelessWidget {
       child: const Text(
         '→',
         style: TextStyle(fontSize: 25),
-
       ),
       onPressed: () {},
       style: ElevatedButton.styleFrom(
