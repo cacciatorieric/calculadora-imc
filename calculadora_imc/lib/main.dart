@@ -10,7 +10,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 
-  FirebaseFirestore.instance.collection('TesteColeção').add(mapa);
+  //FirebaseFirestore.instance.collection('TesteColeção').add(mapa);
 }
 
 Map<String, String> mapa = {'teste chave': 'teste valor'};

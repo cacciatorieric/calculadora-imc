@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -82,17 +81,11 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 10,
             ),
             Visibility(
-              child: TextField(
+              child: PhoneInput(
                 controller: otpController,
-                decoration: const InputDecoration(
-                  hintText: 'OTP',
-                  prefix: Padding(
-                    padding: EdgeInsets.all(4),
-                    child: Text(''),
-                  ),
-                ),
-                maxLength: 6,
-                keyboardType: TextInputType.number,
+                hint: 'Digite o código aqui',
+                maxLenght: 6,
+                tipoInput: const TextInputType.numberWithOptions(),
               ),
               visible: otpVisibility,
             ),
