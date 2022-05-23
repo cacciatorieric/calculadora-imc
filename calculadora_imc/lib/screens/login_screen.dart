@@ -30,6 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Color corPrimaria = const Color.fromARGB(255, 53, 75, 52);
     Color corSecundaria = Theme.of(context).scaffoldBackgroundColor;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -98,7 +99,17 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 10,
             ),
-            const StandartButton(titulo: 'Avançar'),
+            StandartButton(
+              titulo: 'Avançar',
+              acao: () {
+                if (otpVisibility) {
+                  verifyOTP();
+                } else {
+                  loginWithPhone();
+                }
+                otpVisibility ? "Verificar" : "Avançar";
+              },
+            ),
             const SizedBox(
               height: 150,
             ),

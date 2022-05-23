@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StandartButton extends StatelessWidget {
-  const StandartButton({Key? key, required this.titulo}) : super(key: key);
+  const StandartButton({Key? key, required this.titulo, required this.acao}) : super(key: key);
 
   final String titulo;
+  final void Function() acao;
 
   @override
   Widget build(BuildContext context) {
-    TextStyle fonte = GoogleFonts.titilliumWeb();
     return ElevatedButton(
+      
       child: Text(
         titulo,
         style: GoogleFonts.titilliumWeb(
@@ -17,7 +18,7 @@ class StandartButton extends StatelessWidget {
           fontSize: 25,
         ),
       ),
-      onPressed: () {},
+      onPressed:acao,
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
