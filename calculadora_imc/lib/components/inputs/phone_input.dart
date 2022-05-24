@@ -10,6 +10,7 @@ class PhoneInput extends StatelessWidget {
     this.bandeira,
     this.maxLenght,
     this.tipoInput,
+    required this.largura,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -17,13 +18,15 @@ class PhoneInput extends StatelessWidget {
   final SvgPicture? bandeira;
   final int? maxLenght;
   final TextInputType? tipoInput;
+  final double? largura;
+
 
   @override
   Widget build(BuildContext context) {
     Color corPrimaria = Theme.of(context).primaryColor;
     Color corSecundaria = Theme.of(context).scaffoldBackgroundColor;
     return Container(
-      width: MediaQuery.of(context).size.width * 0.7,
+      width: largura,
       height: 58,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(

@@ -70,6 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
             PhoneInput(
               controller: phoneController,
               hint: 'Insira seu número aqui',
+              largura: MediaQuery.of(context).size.width * 0.7,
               maxLenght: 11,
               bandeira: SvgPicture.asset(
                 'assets/images/bandeirola.svg',
@@ -83,6 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Visibility(
               child: PhoneInput(
                 controller: otpController,
+                largura: MediaQuery.of(context).size.width * 0.7,
                 hint: 'Digite o código aqui',
                 maxLenght: 6,
                 tipoInput: const TextInputType.numberWithOptions(),
@@ -168,13 +170,12 @@ class _LoginScreenState extends State<LoginScreen> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const HomeScreen(),
+              builder: (context) => Home(),
             ),
           );
         } else {
           Fluttertoast.showToast(
-            msg:
-                "Algo de errado não está certo, tente novamente ou contate o administrador",
+            msg: "Codigo incorreto, verifique e tente novamente",
             toastLength: Toast.LENGTH_SHORT,
             gravity: ToastGravity.BOTTOM,
             timeInSecForIosWeb: 1,
