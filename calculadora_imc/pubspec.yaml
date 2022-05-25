@@ -42,6 +42,8 @@ dependencies:
   google_fonts: ^3.0.0
   fluttertoast: ^8.0.9
   font_awesome_flutter: ^10.1.0
+  syncfusion_flutter_charts: ^20.1.57
+  syncfusion_flutter_gauges: ^20.1.57
 
 dev_dependencies:
   flutter_test:

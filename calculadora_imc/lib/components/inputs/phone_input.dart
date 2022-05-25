@@ -20,7 +20,6 @@ class PhoneInput extends StatelessWidget {
   final TextInputType? tipoInput;
   final double? largura;
 
-
   @override
   Widget build(BuildContext context) {
     Color corPrimaria = Theme.of(context).primaryColor;
