@@ -3,22 +3,58 @@ import 'package:flutter/material.dart';
 class SetaDinamica extends StatelessWidget {
   const SetaDinamica({
     Key? key,
-    required this.valorCalculado,
+    required this.valor,
   }) : super(key: key);
 
-  final double? valorCalculado;
+  final double? valor;
 
   @override
   Widget build(BuildContext context) {
-    double? valor = valorCalculado;
-    return Column(
-      children: [
-        Text(valor! < 10 ? 'fodase' : 'beija saco'),
-        Text(valor < 20 ? 'pelo de saco' : 'pepeka'),
-        Text(valor < 30 ? 'baitosa' : 'sao paulino'),
-        Text(valor < 40 ? 'gostosa' : 'fresco'),
+    return Container(child: comandoSeta());
+  }
 
-      ],
-    );
+  comandoSeta() {
+    if (valor! < 19.9) {
+      return Text(
+        '$valor',
+        style: const TextStyle(
+          color: Colors.blue,
+          fontSize: 25,
+        ),
+      );
+    } else if (valor! < 24.9) {
+      return Text(
+        '$valor',
+        style: const TextStyle(
+          color: Colors.green,
+          fontSize: 25,
+        ),
+      );
+    } else if (valor! < 29.9) {
+      return Text(
+        '$valor',
+        style: const TextStyle(
+          color:Color.fromARGB(255, 254, 131, 0),
+          fontSize: 25,
+        ),
+      );
+    }
+ else if (valor! < 39.9) {
+      return Text(
+        '$valor',
+        style: const TextStyle(
+          color:Colors.red,
+          fontSize: 25,
+        ),
+      );
+    }else if (valor! > 40) {
+      return Text(
+        '$valor',
+        style: const TextStyle(
+          color:Color.fromARGB(255, 53, 1, 1),
+          fontSize: 25,
+        ),
+      );
+    }
   }
 }

@@ -18,15 +18,13 @@ TextEditingController alturaController = TextEditingController();
 String? usuario;
 double? valorImc;
 
-Widget? pontuacao() {}
-
 class _HomeState extends State<Home> {
   String uid = "";
   @override
   @override
   Widget build(BuildContext context) {
     usuario = 'Usuário(a)';
-    valorImc = 12;
+    valorImc = 10;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -91,7 +89,7 @@ class _HomeState extends State<Home> {
                 GaugeRange(
                   startValue: 25,
                   endValue: 29.9,
-                  color: Color.fromARGB(255, 254, 131, 0),
+                  color: const Color.fromARGB(255, 254, 131, 0),
                   label: 'Sobrepeso',
                 ),
                 GaugeRange(
@@ -103,7 +101,7 @@ class _HomeState extends State<Home> {
                 GaugeRange(
                   startValue: 40,
                   endValue: 60,
-                  color: Color.fromARGB(255, 53, 1, 1),
+                  color: const Color.fromARGB(255, 53, 1, 1),
                   label: 'Obesidade Grau III',
                 ),
               ],
@@ -115,7 +113,7 @@ class _HomeState extends State<Home> {
               ],
               annotations: <GaugeAnnotation>[
                 GaugeAnnotation(
-                  widget: SetaDinamica(valorCalculado: valorImc),
+                  widget: SetaDinamica(valor: valorImc),
                   positionFactor: 0.2,
                   angle: 90,
                 )
