@@ -122,7 +122,7 @@ class _HomeState extends State<Home> {
             ),
             const SizedBox(height: 60,),
             StandartButton(
-              titulo: 'Calcular IMC',
+              titulo: 'Novo monitor',
               acao: () {},
             ),
             GraficoMedidor(
