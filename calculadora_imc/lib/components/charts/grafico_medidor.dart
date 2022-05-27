@@ -3,12 +3,8 @@ import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'package:calculadora_imc/components/charts/anotacao_grafico.dart';
 
 class GraficoMedidor extends StatelessWidget {
-  const GraficoMedidor({
-    Key? key,
-    required this.valorCalculo,
-  }) : super(
-          key: key,
-        );
+  const GraficoMedidor({Key? key, required this.valorCalculo})
+      : super(key: key);
 
   final double? valorCalculo;
 
@@ -17,51 +13,51 @@ class GraficoMedidor extends StatelessWidget {
     return SfRadialGauge(
       axes: <RadialAxis>[
         RadialAxis(
+          canScaleToFit: true,
+          startAngle: 180,
+          endAngle: 0,
           minimum: 0,
           maximum: 60,
           interval: 5,
+          showLabels: false,
+          showAxisLine: false,
           ranges: <GaugeRange>[
             GaugeRange(
               startValue: 0,
-              endValue: 18.4,
-              color: Colors.blue,
-              //label: 'Abaixo do ideal',
-            ),
-            GaugeRange(
-              startValue: 18.5,
-              endValue: 24.9,
-              color: Colors.green,
-              //label: 'Peso ideal',
-            ),
-            GaugeRange(
-              startValue: 25,
-              endValue: 29.9,
-              color: const Color.fromARGB(255, 254, 131, 0),
-              //label: 'Sobrepeso',
-            ),
-            GaugeRange(
-              startValue: 30,
-              endValue: 39.9,
-              color: Colors.red,
-              //label: 'Obesidade Grau I e II',
-            ),
-            GaugeRange(
-              startValue: 40,
               endValue: 60,
-              color: const Color.fromARGB(255, 53, 1, 1),
-              //label: 'Obesidade Grau III',
+              startWidth: 65,
+              endWidth: 65,
+              gradient: SweepGradient(colors: <Color>[
+                Colors.blue.shade200,
+                Colors.blue,
+                Colors.green,
+                Colors.orange,
+                Colors.red,
+                const Color.fromARGB(255, 30, 0, 1),
+              ], stops: const <double>[
+                0.10,
+                0.20,
+                0.30,
+                0.50,
+                0.60,
+                0.75,
+              ]),
             ),
           ],
           pointers: <GaugePointer>[
-            NeedlePointer(
-              value: valorCalculo!,
-              enableAnimation: true,
-            )
+            MarkerPointer(
+                value: valorCalculo!,
+                enableAnimation: true,
+                color: Colors.white,
+                markerOffset: 55,
+                markerWidth: 40,
+                markerHeight: 20,
+                markerType: MarkerType.triangle)
           ],
           annotations: <GaugeAnnotation>[
             GaugeAnnotation(
               widget: AnotacaoGrafico(valor: valorCalculo),
-              positionFactor: 0.2,
+              positionFactor: 0.5,
               angle: 90,
             )
           ],

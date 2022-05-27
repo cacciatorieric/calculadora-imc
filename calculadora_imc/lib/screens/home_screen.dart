@@ -1,7 +1,6 @@
 import 'package:calculadora_imc/components/appbar/custom_appbar.dart';
 import 'package:calculadora_imc/components/charts/grafico_medidor.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
@@ -22,15 +21,16 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     usuario = 'Usuário(a)';
-    valorImc = 52;
+    valorImc = 17;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        toolbarHeight: 100,
+        toolbarHeight: 80,
         automaticallyImplyLeading: false,
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         title: Text(
-          'Seja bem vindo $usuario', 
+          'Seja bem vindo $usuario',
           style: GoogleFonts.titilliumWeb(
             color: Colors.red,
             fontSize: 16,
@@ -41,8 +41,25 @@ class _HomeState extends State<Home> {
         ],
       ),
       body: Container(
-        color: const Color.fromARGB(255, 255, 255, 255),
-        child: GraficoMedidor(valorCalculo: valorImc),
+        color: Colors.white,
+        height: double.infinity,
+        width: double.infinity,
+        child: Column(
+          children: [
+            const Text(
+              'Testando',
+              style: TextStyle(fontSize: 25, color: Colors.black),
+              textAlign: TextAlign.center,
+            ),
+            Container(
+              height: 280,
+              width: double.infinity,
+              child: GraficoMedidor(
+                valorCalculo: valorImc,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
