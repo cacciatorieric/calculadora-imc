@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SetaDinamica extends StatelessWidget {
-  const SetaDinamica({
+class AnotacaoGrafico extends StatelessWidget {
+  const AnotacaoGrafico({
     Key? key,
     required this.valor,
   }) : super(key: key);
