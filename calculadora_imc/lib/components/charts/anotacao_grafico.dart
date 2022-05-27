@@ -10,35 +10,37 @@ class AnotacaoGrafico extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: comandoSeta());
+    return Column(
+      children: [
+        const Text(
+          ' IMC',
+          style: TextStyle(
+            color: Color.fromARGB(255, 111, 111, 111),
+            fontSize: 14,
+          ),
+        ),
+        comandoSeta(),
+      ],
+    );
   }
 
   comandoSeta() {
     if (valor! < 19.9) {
-      return Column(
-        children: [
-          const Text(
-            'IMC',
-            style: TextStyle(
-              color: Colors.blue,
-              fontSize: 14,
-            ),
-          ),
-          Text(
-            '$valor',
-            style: const TextStyle(
-              color: Colors.blue,
-              fontSize: 14,
-            ),
-          ),
-        ],
+      return Text(
+        '$valor',
+        style: const TextStyle(
+          color: Colors.blue,
+          fontSize: 28,
+          fontWeight: FontWeight.w500,
+        ),
       );
     } else if (valor! < 24.9) {
       return Text(
         '$valor',
         style: const TextStyle(
           color: Colors.green,
-          fontSize: 14,
+          fontSize: 28,
+          fontWeight: FontWeight.w500,
         ),
       );
     } else if (valor! < 29.9) {
@@ -46,7 +48,8 @@ class AnotacaoGrafico extends StatelessWidget {
         '$valor',
         style: const TextStyle(
           color: Colors.orange,
-          fontSize: 14,
+          fontSize: 28,
+          fontWeight: FontWeight.w500,
         ),
       );
     } else if (valor! < 39.9) {
@@ -54,7 +57,8 @@ class AnotacaoGrafico extends StatelessWidget {
         '$valor',
         style: const TextStyle(
           color: Colors.red,
-          fontSize: 14,
+          fontSize: 28,
+          fontWeight: FontWeight.w500,
         ),
       );
     } else if (valor! > 40) {
@@ -62,7 +66,8 @@ class AnotacaoGrafico extends StatelessWidget {
         '$valor',
         style: const TextStyle(
           color: Color.fromARGB(255, 53, 1, 1),
-          fontSize: 14,
+          fontSize: 28,
+          fontWeight: FontWeight.w500,
         ),
       );
     }

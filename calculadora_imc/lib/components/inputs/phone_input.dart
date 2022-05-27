@@ -44,7 +44,8 @@ class PhoneInput extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(
-              color: corSecundaria,
+              color:  corSecundaria,
+              width: 3,
             ),
           ),
           hintText: hint,
