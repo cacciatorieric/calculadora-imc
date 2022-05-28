@@ -5,6 +5,7 @@ import 'package:calculadora_imc/components/inputs/phone_input.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:group_button/group_button.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -54,75 +55,84 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 54,
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: GroupButton(
-                isRadio: true,
-                buttons: const ['Feminino', 'Masculino'],
-                options: GroupButtonOptions(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+            GroupButton(
+              isRadio: true,
+              buttons: const ['Feminino', 'Masculino'],
+              options: GroupButtonOptions(
+                borderRadius: BorderRadius.circular(12),
+                elevation: 4,
+                unselectedColor: Colors.black12,
+                selectedColor: const Color.fromARGB(255, 53, 75, 52),
               ),
             ),
             const SizedBox(
               height: 46,
             ),
-            Row(
-              children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                const Text(
+                  'Altura(cm)',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    color: Colors.black45,
+                    fontSize: 11,
+                  ),
+                ),
+                PhoneInput(
+                  controller: pesoController,
+                  hint: 'Ex: 170',
+                  largura: 150,
+                  maxLenght: 3,
+                  tipoInput: TextInputType.number,
+                ),
+              ]),
+              Column(children: [
                 const SizedBox(
-                  width: 40,
-                ),
-                Column(
-                  children: [
-                    const SizedBox(
-                      width: 150,
-                      child: Text(
-                        'Altura(cm)',
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                          color: Colors.black45,
-                          fontSize: 11,
-                        ),
-                      ),
+                  width: 150,
+                  child: Text(
+                    'Peso(kg)',
+                    style: TextStyle(
+                      color: Colors.black45,
+                      fontSize: 11,
                     ),
-                    PhoneInput(
-                      controller: pesoController,
-                      hint: 'Ex: 170',
-                      largura: 150,
-                      maxLenght: 3,
-                      tipoInput: TextInputType.number,
-                    ),
-                  ],
+                  ),
                 ),
-                const SizedBox(
-                  width: 20,
+                PhoneInput(
+                  controller: pesoController,
+                  hint: 'Ex: 90',
+                  largura: 150,
+                  maxLenght: 3,
+                  tipoInput: TextInputType.number,
                 ),
-                Column(
-                  children: [
-                    const SizedBox(
-                      width: 150,
-                      child: Text(
-                        'Peso(kg)',
-                        style: TextStyle(
-                          color: Colors.black45,
-                          fontSize: 11,
-                        ),
-                      ),
+              ]),
+            ]),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 82.0,
+                right: 82.0,
+                top: 12.0,
+                bottom: 12.0,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    'Idade',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: Colors.black45,
+                      fontSize: 11,
                     ),
-                    PhoneInput(
-                      controller: pesoController,
-                      hint: 'Ex: 90',
-                      largura: 150,
-                      maxLenght: 3,
-                      tipoInput: TextInputType.number,
-                    ),
-                  ],
-                ),
-              ],
+                  ),
+                  PhoneInput(
+                    hint: 'Ex: 28',
+                    largura: double.infinity,
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 60,),
             StandartButton(
-              titulo: 'Novo monitor',
+              titulo: 'Calcular IMC',
               acao: () {},
             ),
             GraficoMedidor(

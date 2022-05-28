@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class PhoneInput extends StatelessWidget {
   const PhoneInput({
     Key? key,
-    required this.controller,
+    this.controller,
     required this.hint,
     this.bandeira,
     this.maxLenght,
