@@ -10,7 +10,6 @@ class StandartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      
       child: Text(
         titulo,
         style: GoogleFonts.titilliumWeb(

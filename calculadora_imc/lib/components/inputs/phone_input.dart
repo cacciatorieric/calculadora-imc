@@ -32,7 +32,7 @@ class PhoneInput extends StatelessWidget {
             Radius.elliptical(12, 12),
           ),
           shape: BoxShape.rectangle),
-      child: TextField(
+      child: TextFormField(
         controller: controller,
         keyboardType: tipoInput,
         decoration: InputDecoration(
@@ -44,7 +44,7 @@ class PhoneInput extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(
-              color:  corSecundaria,
+              color: corSecundaria,
               width: 3,
             ),
           ),
